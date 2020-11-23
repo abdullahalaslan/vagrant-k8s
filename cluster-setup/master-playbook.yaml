@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - docker
+    - swap
+    - k8s-binaries
+    - k8s-initialize
+    - kubeconfig
+    - calico
+    - join-command
+  handlers:
+    - name: docker status
+      service: name=docker state=started
