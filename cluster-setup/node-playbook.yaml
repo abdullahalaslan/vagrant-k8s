@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - docker
+    - swap
+    - k8s-binaries
+    - kubejoin
+  handlers:
+    - name: docker status
+      service: name=docker state=started
