@@ -7,7 +7,7 @@
     - k8s-binaries
     - k8s-initialize
     - kubeconfig
-    - calico
+    - flannel
     - join-command
   handlers:
     - name: docker status
