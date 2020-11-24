@@ -6,7 +6,7 @@
 #curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && sudo install skaffold /usr/local/bin/ -y
 vagrant up
 export DB_PASSWORD=`pwgen Bs1 12`
-kubectl apply -f mysql-deployment.yaml
-kubectl apply -f mysql-service.yaml
-kubectl apply -f registry-deployment.yaml
-kubectl apply -f registry-service.yaml
+kubectl apply -f k8s/mysql-deployment.yaml
+kubectl apply -f k8s/mysql-service.yaml
+kubectl apply -f k8s/registry-deployment.yaml
+kubectl apply -f k8s/registry-service.yaml
