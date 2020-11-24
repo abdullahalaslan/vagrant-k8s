@@ -7,3 +7,4 @@
 vagrant up
 export DB_PASSWORD=`pwgen Bs1 12`
 kubectl apply -f mysql-deployment.yaml
+kubectl apply -f mysql-service.yaml
