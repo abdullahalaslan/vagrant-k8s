@@ -1,0 +1,5 @@
+- name: Install pwgen
+  apt:
+    name: "pwgen"
+    state: present
+    update_cache: yes
