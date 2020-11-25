@@ -1,0 +1,9 @@
+  - name: Download minikube
+    command: curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  - name: Install minikube
+    command: install minikube-linux-amd64 /usr/local/bin/minikube
+  - name: Install conntrack
+    apt:
+      name: "conntrack"
+      state: present
+      update_cache: yes
