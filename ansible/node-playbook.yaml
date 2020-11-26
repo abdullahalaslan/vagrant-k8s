@@ -8,7 +8,6 @@
     - skaffold
     - k8s-binaries
     - kubejoin
-    - flannel
     - launch
   handlers:
     - name: docker status
