@@ -8,3 +8,4 @@
     dest: /home/vagrant/.kube/config
 - name: Apply k8s manifest files to launch the application
   script: launch.sh
+  become: false
