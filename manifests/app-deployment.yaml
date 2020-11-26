@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-app
+  template:
+    metadata:
+      labels:
+        app: hello-app
+    spec:
+      containers:
+        - name: hello-app
+          image: hello-python
+          ports:
+            - containerPort: 3000
+          env:
+            - name: MYSQL_USERNAME
+              value: "python"
+            - name: MYSQL_PASSWORD
+              value: "mysecretpassword"
+            - name: MYSQL_INSTANCE_NAME
+              value: "main"
+            - name: MYSQL_PORT_3306_TCP_ADDR
+              value: $(SERVICE_MYSQL_SERVICE_HOST)
+            - name: MYSQL_PORT_3306_TCP_PORT
+              value: "3306"
