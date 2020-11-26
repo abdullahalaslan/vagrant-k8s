@@ -1,6 +1,0 @@
-  - name: Start minikube
-    command: minikube start --driver=none
-  - name: Make vagrant user owner of .minikube
-    command: chown vagrant:vagrant /home/vagrant/.minikube
-
-    
