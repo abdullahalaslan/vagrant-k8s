@@ -4,8 +4,11 @@
   roles:
     - docker
     - swap
+    - pwgen
+    - skaffold
     - k8s-binaries
     - kubejoin
+    - launch
   handlers:
     - name: docker status
       service: name=docker state=started
