@@ -1,2 +1,10 @@
+- name: Create .kube directory for vagrant user
+  file:
+    path: /home/vagrant/.kube
+    state: directory
+- name: Upload kubeconfig to the node
+  copy:
+    src: ~/.kube/config
+    dest: /home/vagrant/.kube/config
 - name: Apply k8s manifest files to launch the application
-  script: launch.sh 
+  script: launch.sh
