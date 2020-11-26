@@ -2,11 +2,5 @@
 #sudo apt-get install virtualbox -y
 #sudo apt-get install vagrant -y
 #sudo apt-get install ansible -y
-#sudo apt-get install pwgen -y
-#curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && sudo install skaffold /usr/local/bin/ -y
+git -C ~/ clone https://github.com/baturayozcan/python-helloworld.git
 vagrant up
-export DB_PASSWORD=`pwgen -Bs1 12`
-kubectl apply -f k8s/mysql-deployment.yaml
-kubectl apply -f k8s/mysql-service.yaml
-kubectl apply -f k8s/registry-deployment.yaml
-kubectl apply -f k8s/registry-service.yaml
