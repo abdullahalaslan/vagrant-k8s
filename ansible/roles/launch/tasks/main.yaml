@@ -6,6 +6,9 @@
   copy:
     src: ~/.kube/config
     dest: /home/vagrant/.kube/config
+- name: Install flannel pod network
+  become: false
+  command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml    
 - name: Apply k8s manifest files to launch the application
   script: launch.sh
   become: false
