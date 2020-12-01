@@ -27,7 +27,14 @@ Vagrant.configure("2") do |config|
             node.vm.network "private_network", ip: "192.168.50.#{i + 10}"
             node.vm.hostname = "node-#{i}"
             node.vm.provision "ansible" do |ansible|
-                ansible.playbook = "ansible/node-playbook.yaml"
+                ansible.playbook = "ansible/node-playbook-before.yaml"
+                ansible.extra_vars = {
+                    node_ip: "192.168.50.#{i + 10}",
+                }
+            end
+            node.vm.provision :reload
+            node.vm.provision "ansible" do |ansible|
+                ansible.playbook = "ansible/node-playbook-after.yaml"
                 ansible.extra_vars = {
                     node_ip: "192.168.50.#{i + 10}",
                 }
