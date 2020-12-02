@@ -454,4 +454,4 @@ Continous Delivery cannot be implemented. Many solutions has been tried but the 
 
 Before thinking to run skaffold in the VM, running it on the local has also been tried. However, issue with that approach was pushing container images into the VM. Creating a private Docker registry in the VM might be the solution but it also came with other issues and canceled.
 
-Therefore, after the code changes, **skaffold run** should be run manually in the node VM.
+Therefore, after the code changes, **vagrant ssh node-1 -- -c 'cd /home/vagrant/hello-python && skaffold run; /bin/bash'** should be run manually on local machine or **skaffold run** in the VM.
