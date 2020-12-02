@@ -294,7 +294,7 @@ spec:
               value: main
 ```
 
-pulls *mysql* image from Dockerhub and run it on port 3306 taking following environment variables:
+pulls *mysql* image from Dockerhub and runs it on port 3306 taking following environment variables:
 **MYSQL_ROOT_PASSWORD:** randomly generated
 
 **MYSQL_USER_PASSWORD:** 'python' as username to be created for Python app
